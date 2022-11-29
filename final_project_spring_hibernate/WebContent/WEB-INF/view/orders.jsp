@@ -39,7 +39,7 @@
                                         <td> <a href="#">${order.product.product_name}</a></td>
                                         <td>${order.product.price}</td>
                                         <td>${order.quantity}</th>
-                                        <td><a class="btn btn-sm btn-danger text-white" href="${deleteMyOrderLink}">Cancel</a></td>
+                                        <td><a class="btn btn-sm btn-danger text-white" href="${deleteMyOrderLink}" onclick="if(!confirm('Are you sure to detele?')) return false; ">Cancel</a></td>
                                     </tr>
                                 </c:forEach>
                             </c:when>

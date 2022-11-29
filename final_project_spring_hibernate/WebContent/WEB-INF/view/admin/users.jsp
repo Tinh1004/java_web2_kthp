@@ -9,7 +9,7 @@
       name="viewport"
       content="width=device-width,initial-scale=1,maximum-scale=1"
     />
-    <title>Modern Admin Dashboard</title>
+    <title>Modern Admin </title>
     
     <%@include file="./includes/header_admin.jsp" %>
     
@@ -23,7 +23,7 @@
 
       <main>
         <div class="page-header">
-          <h1>Product</h1>
+          <h1>User</h1>
           <small>Admin / User</small>
         </div>
 

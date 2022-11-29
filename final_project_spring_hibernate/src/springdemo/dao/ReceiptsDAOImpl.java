@@ -47,7 +47,7 @@ public class ReceiptsDAOImpl implements ReceiptsDAO {
 	@Override
 	public List<Receipts> getReceipts() {
 		Session currentSession = sessionFactory.getCurrentSession();
-		Query<Receipts> theQuery= currentSession.createQuery("from Receipts where user_id = 1", Receipts.class);
+		Query<Receipts> theQuery= currentSession.createQuery("from Receipts", Receipts.class);
 		List<Receipts> receipts = theQuery.getResultList();
 		return receipts;
 	}

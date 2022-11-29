@@ -39,8 +39,8 @@
 <%@include file="./includes/navbar_admin.jsp" %>
       <main>
         <div class="page-header">
-          <h1>Update Product</h1>
-          <small>Admin / Update Product</small>
+          <h1>Detail Order</h1>
+          <small>#${order.receipt_id} - ${order.product.product_name}</small>
         </div>
 
           <div class="records table-responsive" >
@@ -53,8 +53,11 @@
                 <div class="description">
                   <h3 id="name">${order.product.product_name}</h3>
                   <p>Discription:</p>
-                  <p>Price: <span id="price">${order.product.price} </span>đ </p>
+                  <p>Price: <span id="price">${order.product.price}đ </span></p>
+                  <p>quantity: ${order.quantity}</p>
                   <p>User buy: ${order.user.fullname}</p>
+                  
+                  <p style="padding-top: 20px; font-size: 18px;">Total: <span id="price">${order.quantity * order.product.price}đ</span> </p>
                 </div>
               </div>
             

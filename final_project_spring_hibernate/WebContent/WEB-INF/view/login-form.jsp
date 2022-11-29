@@ -6,29 +6,66 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
+	<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/login.css">
+	
 </head>
 <body>
 
-	<div class="container col-md-8 col-md-offset-3" style="overflow: auto">
-		<h1>Login Form</h1>
-			<form:form action="login" modelAttribute="user" method="POST">
-				<div class="form-group">
-				<label for="username">User Name:</label> 
-				<form:input cssClass="form-control" path="username" placeholder="User Name" />
-			</div>
 
-			<div class="form-group">
-				<label for="password">Password:</label> 
-				<form:input type="password" cssClass="form-control" path="password" placeholder="password" />
-			</div>
+	<div class="container" id="container">
+		
+      <div class="form-container sign-up-container">
 
-			<button type="submit" class="btn btn-primary">Submit</button>
-			</form:form>
-		<a href="<%=request.getContextPath()%>/auth/register">register</a>
-		</div>
+        <form:form action="registerUser" modelAttribute="user" method="POST">
+        	<h1>Create Account</h1>
+          <span>or use your email for registration</span>
+          <form:input cssClass="form-control" path="fullname" placeholder="FullName" />
+          <form:input path="username" placeholder="User Name" />
+          <form:input type="password" cssClass="form-control" path="password" placeholder="password" />
+          <button type="submit">Sign Up</button>
+        </form:form>
+        
+       
+      </div>
+      <div class="form-container sign-in-container">
+         <form:form action="login" modelAttribute="user" method="POST">
+        	<h1>Sign in</h1>
+          <span>or use your email for registration</span>
+          <form:input path="username" placeholder="User Name" />
+          <form:input type="password" cssClass="form-control" path="password" placeholder="password" />
+          <a href="#">Forgot your password?</a>
+          <button type="submit">Sign in</button>
+        </form:form>
+      </div>
+      
+      
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Welcome Back!</h1>
+            <p></p>
+            <button class="ghost" id="signIn">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Hello, Friend!</h1>
+            <p>Enter your personal details and start journey with us</p>
+            <button class="ghost" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
+<script>
+    const signUpButton = document.getElementById("signUp");
+    const signInButton = document.getElementById("signIn");
+    const container = document.getElementById("container");
+
+    signUpButton.addEventListener("click", () => {
+      container.classList.add("right-panel-active");
+    });
+
+    signInButton.addEventListener("click", () => {
+      container.classList.remove("right-panel-active");
+    });
+  </script>
 </html>

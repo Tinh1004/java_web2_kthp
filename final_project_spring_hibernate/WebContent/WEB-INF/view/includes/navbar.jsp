@@ -38,7 +38,6 @@
                             <c:when test="${auth == null}">
                                 <div>
                                     <li class="cart"><a href="<%=request.getContextPath()%>/auth/login">login</a></li>
-                                    <li class="cart"><a href="<%=request.getContextPath()%>/auth/register">register</a></li>
                                 </div>
                             </c:when>
                             <c:otherwise>
